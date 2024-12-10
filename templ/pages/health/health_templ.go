@@ -8,7 +8,7 @@ package health
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "github.com/ekediala/expensix/templ/components/shell"
+import "github.com/ekediala/template/templ/components/shell"
 
 func comp() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {

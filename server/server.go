@@ -5,17 +5,17 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/ekediala/expensix"
-	"github.com/ekediala/expensix/httpio"
-	"github.com/ekediala/expensix/store"
-	"github.com/ekediala/expensix/templ/pages/health"
+	"github.com/ekediala/template"
+	"github.com/ekediala/template/httpio"
+	"github.com/ekediala/template/store"
+	"github.com/ekediala/template/templ/pages/health"
 )
 
 //go:embed public/*
 var assets embed.FS
 
 var (
-	PathLanding = fmt.Sprintf("%s %s", http.MethodGet, expensix.RouteLanding)
+	PathLanding = fmt.Sprintf("%s %s", http.MethodGet, template.RouteLanding)
 	PathAssets  = fmt.Sprintf("%s /public/", http.MethodGet)
 )
 

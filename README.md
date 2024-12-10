@@ -25,9 +25,9 @@ A robust, production-ready Go web server template with built-in PostgreSQL suppo
 ## Project Structure
 
 ```table
-expensix/
+template/
 ├── cmd/                    # Application entrypoints
-│   └── expensix/          # Main application
+│   └── template/          # Main application
 ├── server/                 # HTTP server implementation
 ├── store/                 # Database operations and business logic
 ├── sqlx/                  # Database utilities and migrations
@@ -50,8 +50,8 @@ expensix/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/expensix.git
-   cd expensix
+   git clone https://github.com/yourusername/template.git
+   cd template
    ```
 
 2. Set up your environment variables:

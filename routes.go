@@ -1,4 +1,4 @@
-package expensix
+package template
 
 const (
 	RouteLanding = "/"

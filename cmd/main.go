@@ -11,16 +11,16 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/ekediala/expensix/config"
-	"github.com/ekediala/expensix/httpio"
-	"github.com/ekediala/expensix/server"
-	"github.com/ekediala/expensix/sqlx"
-	"github.com/ekediala/expensix/store"
+	"github.com/ekediala/template/config"
+	"github.com/ekediala/template/httpio"
+	"github.com/ekediala/template/server"
+	"github.com/ekediala/template/sqlx"
+	"github.com/ekediala/template/store"
 	"github.com/joho/godotenv"
 )
 
 func main() {
-	const appName = "expensix"
+	const appName = "template"
 
 	logger := slog.New(httpio.NewLogHandler(slog.NewJSONHandler(os.Stderr, nil)))
 	logger = logger.With("app", appName)

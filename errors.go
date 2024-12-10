@@ -1,4 +1,4 @@
-package expensix
+package template
 
 import "errors"
 

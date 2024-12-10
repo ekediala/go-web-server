@@ -1,6 +1,6 @@
 package store
 
-import "github.com/ekediala/expensix/sqlx"
+import "github.com/ekediala/template/sqlx"
 
 type Store struct {
 	db sqlx.DBTX

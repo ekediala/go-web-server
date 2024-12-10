@@ -1,4 +1,4 @@
-module github.com/ekediala/expensix
+module github.com/ekediala/template
 
 go 1.23.1
 
