@@ -1,6 +1,7 @@
-
+-- Enable pgcrypto for cryptographic functions
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
+-- Create ULID generation function
 CREATE OR REPLACE FUNCTION ulid_generate() RETURNS text AS $$
 DECLARE
     timestamp  bigint;
@@ -23,10 +24,11 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+-- Create users table
 CREATE TABLE IF NOT EXISTS "users" (
     id text PRIMARY KEY DEFAULT ulid_generate(),
     name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP

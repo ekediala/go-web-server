@@ -7,10 +7,11 @@ templ Shell(title string, content templ.Component) {
 			<meta charset="UTF-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<link href="/public/output.css" rel="stylesheet"/>
+			<script src="/public/htmx.min.js"></script>
 			<title>{ title }</title>
 		</head>
 		<body>
-			<main>
+			<main hx-get="/" hx-trigger="load">
 				@content
 			</main>
 		</body>
