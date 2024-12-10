@@ -52,6 +52,7 @@ func main() {
 
 	app := server.New(store)
 	handler := http.TimeoutHandler(app, 5*time.Second, "request timeout")
+	handler = httpio.CORSMiddleware(handler)
 	handler = httpio.LoggingMiddleware(handler)
 	handler = httpio.TraceMiddleware(handler)
 

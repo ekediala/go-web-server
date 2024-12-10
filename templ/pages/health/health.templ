@@ -1,0 +1,13 @@
+package health
+
+import "github.com/ekediala/expensix/templ/components/shell"
+
+templ comp() {
+	<h1 class="text-3xl font-bold underline">
+		OK
+	</h1>
+}
+
+templ Health() {
+	@shell.Shell("Health", comp())
+}
