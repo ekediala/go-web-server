@@ -16,7 +16,7 @@ type ServerConfig struct {
 }
 
 type DBConfig struct {
-	URL string `validate:"required,min=4"`
+	URL string `validate:"required"`
 }
 
 func LoadConfig() (Config, error) {

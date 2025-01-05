@@ -35,10 +35,10 @@ generate_migration:
 
 dev:
 	make -j4 start generate tailwind notify
-	
+
 install:
 	go mod download
 	npm i --no-fund --legacy-peer-deps --no-audit
 	
 build:
-	go build -o bin/trellix cmd/main.go
+	go build -o bin/app cmd/main.go
