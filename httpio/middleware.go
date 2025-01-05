@@ -34,7 +34,7 @@ func LoggingMiddleware(next http.Handler) http.HandlerFunc {
 		rr := &responseRecorder{ResponseWriter: w}
 		next.ServeHTTP(rr, r)
 		slog.InfoContext(r.Context(), "request",
-			"url", r.URL,
+			"url", r.URL.String(),
 			"method", r.Method,
 			"took", time.Since(start),
 			"statusCode", rr.statusCode,

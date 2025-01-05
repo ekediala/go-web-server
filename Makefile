@@ -2,7 +2,7 @@ start:
 	air -c .air.toml
 
 generate:
-	templ generate -watch -proxy=http://localhost:8080 --proxyport=3000 --proxybind="localhost"
+	templ generate -watch -proxy=http://localhost:8888 --proxyport=3000 --proxybind="localhost"
 
 tailwind:
 	npx --yes tailwindcss -i ./server/public/input.css -o ./server/public/output.css --minify --watch
@@ -35,3 +35,10 @@ generate_migration:
 
 dev:
 	make -j4 start generate tailwind notify
+	
+install:
+	go mod download
+	npm i --no-fund --legacy-peer-deps --no-audit
+	
+build:
+	go build -o bin/trellix cmd/main.go

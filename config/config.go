@@ -1,6 +1,10 @@
 package config
 
-import "os"
+import (
+	"os"
+
+	"github.com/go-playground/validator/v10"
+)
 
 type Config struct {
 	Server ServerConfig
@@ -8,11 +12,11 @@ type Config struct {
 }
 
 type ServerConfig struct {
-	Port string
+	Port string `validate:"required,min=4"`
 }
 
 type DBConfig struct {
-	URL string
+	URL string `validate:"required,min=4"`
 }
 
 func LoadConfig() (Config, error) {
@@ -29,5 +33,9 @@ func LoadConfig() (Config, error) {
 		DB:     db,
 	}
 
-	return config, nil
+	v := validator.New(validator.WithRequiredStructEnabled())
+
+	err := v.Struct(config)
+
+	return config, err
 }

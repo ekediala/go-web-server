@@ -1,8 +1,6 @@
 package templ
 
-import (
-	"net/http"
-)
+import "net/http"
 
 // ComponentHandler is a http.Handler that renders components.
 type ComponentHandler struct {
@@ -36,7 +34,7 @@ func (ch *ComponentHandler) ServeHTTPBuffered(w http.ResponseWriter, r *http.Req
 	}
 	// Ignore write error like http.Error() does, because there is
 	// no way to recover at this point.
-	_, err = w.Write(buf.Bytes())
+	_, _ = w.Write(buf.Bytes())
 }
 
 func (ch *ComponentHandler) ServeHTTPStreamed(w http.ResponseWriter, r *http.Request) {
