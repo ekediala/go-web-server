@@ -64,7 +64,7 @@ template/
 3. Install dependencies:
 
    ```bash
-   go mod download
+   make install
    ```
 
 4. Run database migrations:
